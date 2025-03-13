@@ -12,7 +12,7 @@ app.use(morgan('combined'));
 //Middleware para exponer mis rutas y puedan ser accedidas
 app.use('/api/users', userRoutes);
 app.all('*', (req, res, next)=>{
-    const error = new AppError(`No se ha podido acceder a ${req.originalUrl} en el servidor`, 404);
+    const error = new AppError(`No se ha podido acceder a ${req.originalUrl} en el servidor.`, 404);
     next(error);
 });
 //Middleware para el manejo de errores
